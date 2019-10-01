@@ -1,18 +1,24 @@
 import React from 'react';
 
+import { Text, TouchableOpacity } from 'react-native';
+
 import {
   Container,
-  FieldSearch,
   CardGroup,
   CardGroupText
 } from './styles';
 
+import SearchBar from '../../components/SearchBar';
+
 export default function Dashboard() {
   return (
     <Container>
-      <FieldSearch placeholder="Buscar grupos" />
+      <SearchBar />
       <CardGroup>
-        <CardGroupText>Teste de card</CardGroupText>
+        <Text>User</Text>
+        <Text>User</Text>
+        <Text>User</Text>
+        {/* <CardGroupText>Teste de card</CardGroupText> */}
       </CardGroup>
     </Container>
   );
