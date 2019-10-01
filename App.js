@@ -3,6 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Login from './src/pages/Login';
 import Dashboard from './src/pages/Dashboard';
+import Group from './src/pages/Group';
 
 const AppNavigator = createStackNavigator({
   Login: {
@@ -15,6 +16,12 @@ const AppNavigator = createStackNavigator({
     screen: Dashboard,
     navigationOptions: {
       title: "Painel"
+    }
+  },
+  Group: {
+    screen: Group,
+    navigationOptions: {
+      title: "Grupos"
     }
   },
 });
