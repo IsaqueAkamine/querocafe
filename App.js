@@ -1,6 +1,7 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import './src/config/StatusBarConfig'; // TODO adjust statusbar for iphone and android
 import Login from './src/pages/Login';
 import Dashboard from './src/pages/Dashboard';
 import Group from './src/pages/Group';
