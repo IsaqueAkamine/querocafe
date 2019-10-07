@@ -4,12 +4,14 @@ import { Text, TouchableOpacity } from 'react-native';
 
 import {
   Container,
+  Body,
   SearchContainer,
   CardGroup,
   CardGroupText
 } from './styles';
 
 import SearchBar from '../../components/SearchBar';
+import AddButton from '../../components/AddButton';
 
 export default function Dashboard(props) {
   handleSelectedGroup = async () => {
@@ -24,17 +26,78 @@ export default function Dashboard(props) {
     }
   };
 
+  testeFuncao = () => {
+    alert("Nova funcao teste");
+  }
+
   return (
     <Container>
-      <SearchContainer>
-        <SearchBar />
-      </SearchContainer>
-      <CardGroup onPress={this.handleSelectedGroup}>
-        <Text>User</Text>
-        <Text>User</Text>
-        <Text>User</Text>
-        {/* <CardGroupText>Teste de card</CardGroupText> */}
-      </CardGroup>
+      <Body showsVerticalScrollIndicator={false}>
+        <SearchContainer>
+          <SearchBar />
+        </SearchContainer>
+        <CardGroup onPress={this.handleSelectedGroup}>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          {/* <CardGroupText>Teste de card</CardGroupText> */}
+        </CardGroup>
+
+        <CardGroup onPress={this.handleSelectedGroup}>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          {/* <CardGroupText>Teste de card</CardGroupText> */}
+        </CardGroup>
+
+        <CardGroup onPress={this.handleSelectedGroup}>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          {/* <CardGroupText>Teste de card</CardGroupText> */}
+        </CardGroup>
+
+        <CardGroup onPress={this.handleSelectedGroup}>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          {/* <CardGroupText>Teste de card</CardGroupText> */}
+        </CardGroup>
+
+        <CardGroup onPress={this.handleSelectedGroup}>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          <Text>User</Text>
+          {/* <CardGroupText>Teste de card</CardGroupText> */}
+        </CardGroup>
+
+        <CardGroup onPress={this.handleSelectedGroup}>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          <Text>Description</Text>
+          {/* <CardGroupText>Teste de card</CardGroupText> */}
+        </CardGroup>
+        
+      </Body>
+      <AddButton onPress={this.testeFuncao}/>
     </Container>
   );
 }
