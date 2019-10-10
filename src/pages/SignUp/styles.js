@@ -78,8 +78,8 @@ export const AccountText = styled.Text`
     font-size: 16px;
     font-weight: normal;
     font-style: normal;
-    color: #676d73;
-`;
+    color: #FFF;
+`; // color: #676d73;
 
 export const LinkNewAccount = styled.Text`
     font-size: 16px;

@@ -3,6 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import './src/config/StatusBarConfig'; // TODO adjust statusbar for iphone and android
 import Login from './src/pages/Login';
+import SignUp from './src/pages/SignUp';
 import Dashboard from './src/pages/Dashboard';
 import Group from './src/pages/Group';
 
@@ -11,6 +12,12 @@ const AppNavigator = createStackNavigator({
     screen: Login,
     navigationOptions: {
       title: "Quero café"
+    }
+  },
+  SignUp: {
+    screen: SignUp,
+    navigationOptions: {
+      title: "Criar conta"
     }
   },
   Dashboard: {

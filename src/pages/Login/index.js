@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { TouchableOpacity } from 'react-native';
+
 import {
   Container,
   InputEmailView,
@@ -9,7 +11,9 @@ import {
   ErrorMessage,
   AccessButton,
   AccessButtonText,
-  
+  AccountContent,
+  AccountText,
+  LinkNewAccount
 } from './styles';
 
 import BackgroundImage from '../../assets/login_background200px.png';
@@ -28,7 +32,7 @@ export default function Login(props) {
   };
 
   handleCreateAccountPress = () => {
-    this.props.navigation.navigate('Dashboard');
+    props.navigation.navigate('SignUp');
   };
 
   handleSignInPress = async () => {
@@ -50,31 +54,38 @@ export default function Login(props) {
 
   return (
     <Container source={BackgroundImage} style={{ width: '100%', height: '100%' }}>
-        <InputEmailView>
-          <InputEmailText
-            placeholder="Email"
-            value={email}
-            onChangeText={this.handleEmailChange}
-            autoCapitalize="none"
-            autoCorrect={false}
-          />
-        </InputEmailView>
-        <InputPasswordView>
-          <InputPasswordText
-            placeholder="Senha"
-            secureTextEntry={true}
-            value={password}
-            onChangeText={this.handlePasswordChange}
-            autoCapitalize="none"
-            autoCorrect={false}
-          />
-        </InputPasswordView>
+      <InputEmailView>
+        <InputEmailText
+          placeholder="Email"
+          value={email}
+          onChangeText={this.handleEmailChange}
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+      </InputEmailView>
+      <InputPasswordView>
+        <InputPasswordText
+          placeholder="Senha"
+          secureTextEntry={true}
+          value={password}
+          onChangeText={this.handlePasswordChange}
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+      </InputPasswordView>
 
-        {error.length !== 0 && <ErrorMessage>{error}</ErrorMessage>}
+      {error.length !== 0 && <ErrorMessage>{error}</ErrorMessage>}
 
-        <AccessButton onPress={this.handleSignInPress}>
-          <AccessButtonText>Acessar</AccessButtonText>
-        </AccessButton>
+      <AccessButton onPress={this.handleSignInPress}>
+        <AccessButtonText>Acessar</AccessButtonText>
+      </AccessButton>
+
+      <AccountContent>
+        <AccountText>Não possui uma conta? </AccountText>
+        <TouchableOpacity onPress={this.handleCreateAccountPress}>
+          <LinkNewAccount>Criar conta</LinkNewAccount>
+        </TouchableOpacity>
+      </AccountContent>
     </Container>
   );
 }
