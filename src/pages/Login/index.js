@@ -20,8 +20,8 @@ import BackgroundImage from '../../assets/login_background200px.png';
 import { onSignIn } from '../../services/auth';
 
 export default function Login(props) {
-  const [email, setEmail] = useState('aaaa');
-  const [password, setPassword] = useState('bbbb');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState("");
 
   handleEmailChange = (email) => {
@@ -45,8 +45,9 @@ export default function Login(props) {
           email: email,
           password: password
         };
-        onSignIn();
-        props.navigation.navigate('Dashboard');
+        onSignIn().then(
+          props.navigation.navigate('Dashboard'),
+        );
       } catch (_err) {
         setError('Houve um problema com o login, verifique suas credenciais!' + _err);
       }
