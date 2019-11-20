@@ -4,6 +4,8 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 
 import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+
 import Dashboard from './pages/Dashboard';
 import { TOKEN_KEY, isSignedIn, onSignOut } from './services/auth';
 
@@ -14,7 +16,17 @@ export const SignedOutRoutes = createStackNavigator({
       title: "Entrar"
     }
   },
-});
+  SignUp: {
+    screen: SignUp,
+    navigationOptions: {
+      title: "Registrar"
+    }
+  }
+},
+  {
+    initialRouteName: 'Login',
+  }
+);
 
 class FeedScreen extends React.Component {
   handleLogoutPress = async () => {
